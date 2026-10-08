@@ -1,5 +1,7 @@
 # PW-Checker
 
+![Tests](https://github.com/phs1192/PW-Checker/actions/workflows/tests.yml/badge.svg)
+
 A small command-line tool that rates how strong a password is.
 It is a learning project to understand **why** some passwords are weak and how attackers think.
 
@@ -11,7 +13,7 @@ The password is analysed locally. It is never stored, logged or sent anywhere.
 - **Common-password check** against a bundled list of widely used passwords
 - **Pattern detection** for repeated characters (`aaa`) and sequences (`1234`, `abcd`, `qwertz`)
 - **Concrete tips** on how to improve the password
-- No external dependencies - Python 3.8+ is enough
+- No external dependencies - Python 3.9+ is enough
 
 ## Usage
 
@@ -20,14 +22,14 @@ The password is analysed locally. It is never stored, logged or sent anywhere.
 python pw_checker.py
 
 # Or pass it directly (it may end up in your shell history!)
-python pw_checker.py "correct-horse-battery"
+python pw_checker.py "Sommer2024"
 ```
 
 Example output:
 
 ```
 Rating:  fair
-Entropy: 47.2 bits
+Entropy: 59.5 bits
  - Use at least 12 characters - length matters most.
  - Add symbols such as ! ? # %.
 ```
@@ -68,6 +70,8 @@ because attackers try those first (dictionary attack).
 ```bash
 python -m unittest -v
 ```
+
+The tests also run automatically on every push via GitHub Actions.
 
 ## License
 
